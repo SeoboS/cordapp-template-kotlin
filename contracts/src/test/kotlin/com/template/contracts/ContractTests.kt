@@ -19,16 +19,16 @@ class ContractTests {
             // Should fail bid price is equal to previous highest bid
             transaction {
                 //failing transaction
-                input(TemplateContract.ID, state)
-                output(TemplateContract.ID, state)
-                command(alice.publicKey, TemplateContract.Commands.Create())
+                input(AppleStampContract.ID, state)
+                output(AppleStampContract.ID, state)
+                command(alice.publicKey, AppleStampContract.Commands.Create())
                 fails()
             }
             //pass
             transaction {
                 //passing transaction
-                output(TemplateContract.ID, state)
-                command(alice.publicKey, TemplateContract.Commands.Create())
+                output(AppleStampContract.ID, state)
+                command(alice.publicKey, AppleStampContract.Commands.Create())
                 verifies()
             }
         }
